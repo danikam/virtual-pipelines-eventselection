@@ -39,7 +39,9 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v2
       - name: runs the skimming
-        run: ./skim.sh
+        run: |
+          chmod +x skim
+          ./skim
       - uses: actions/download-artifact@v2
         with:
           name: skim6.18.04
